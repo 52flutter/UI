@@ -1,0 +1,198 @@
+:global {
+  @table-margin-top-bottom:12px;
+  //整个组件的容器
+  .csp-table-container {
+
+  }
+  //table的容器
+  .csp-table-box {
+
+  }
+  //会改变button group的容器
+  .csp-table-dynamic-button {
+    text-align: right;
+    border-bottom: 1px solid #d9d9d9;
+    margin-bottom: 12px;
+  }
+  .csp-table-dynamic-button:before {
+    content: "";
+    display: table;
+  }
+  .csp-table-dynamic-button:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .csp-table-dynamic-button > .ant-btn-group {
+    float: right;
+    margin-bottom: @table-margin-top-bottom;
+    margin-left: @table-margin-top-bottom;
+  }
+  .csp-table-dynamic-button > .csp-table-dynamic-button-children {
+    float: right;
+    margin-bottom: @table-margin-top-bottom;
+  }
+  //设置间距
+  .csp-table-dynamic-button-children > span,.csp-table-dynamic-button-children > div,.csp-table-dynamic-button-children > button,.csp-table-dynamic-button-children > a {
+    margin-left: @table-margin-top-bottom;
+  }
+  //不改变button group的容器
+  .csp-table-fixed-button {
+    text-align: right;
+    margin-bottom: @table-margin-top-bottom;
+    position: relative;
+  }
+  //重置table的title样式
+  .csp-table .ant-table-thead > tr > .ant-table-selection-column .ant-table-selection-down {
+    display: none;
+  }
+  .csp-table .ant-table-thead > tr > .ant-table-selection-column .ant-table-selection-select-all {
+    margin-right: 0 !important;
+  }
+  .csp-table .ant-table-thead > tr > .ant-table-selection-column .ant-checkbox-wrapper:not(:last-child) {
+    margin-right: 0;
+  }
+  .csp-table .ant-table-thead > tr > th {
+    padding: 0;
+    font-size: 14px;
+    white-space:nowrap;
+  }
+  .csp-table .ant-table-thead > tr > th.ant-table-selection-column {
+    padding-left: 0;
+  }
+  //每个title增加的容器样式，为了撑起title高度，若不采用，在拖拽是title高度有问题
+  .csp-table-title {
+    padding: 16px 8px 17px;
+    cursor: move;
+  }
+
+  //搜索框下margin
+  .csp-table-container .ant-input-affix-wrapper {
+    position: absolute;
+    top:0;
+    left:0;
+    padding-right: 187px+@table-margin-top-bottom;
+  }
+  //搜索框右侧叉号定位
+  .csp-table-container .ant-input-affix-wrapper .ant-input-suffix {
+    right: 187px+7px+@table-margin-top-bottom;
+  }
+
+
+  //table下更多按钮容器
+  .csp-table-more {
+    text-align: right;
+    margin-top: @table-margin-top-bottom;
+  }
+  .csp-table-more > div ,.csp-table-more > button {
+    vertical-align: top;
+    margin-left: @table-margin-top-bottom;
+  }
+  .csp-table-more .ant-btn .anticon{
+    vertical-align: middle;
+  }
+  //拖放table的class
+  .csp-table-drag-container {
+
+  }
+  .csp-table-drag-container .ant-table-selection > .ant-table-selection-down {
+    display: none;
+  }
+  .csp-table-drag-container .ant-table-selection > .ant-table-selection-select-all {
+    margin-right: 0 !important;
+  }
+  .csp-table-drag-container .ant-table-selection > .ant-checkbox-wrapper:not(:last-child) {
+    margin-right: 0;
+  }
+  //table若包含input样式,若修改table的padding样式，需修改该样式
+  .csp-table-drag-input {
+    padding: 16px 8px !important;
+  }
+  //超过table拖拽容器时，溢出的元素设置透明
+  .csp-opacity {
+    opacity: 0;
+  }
+  .csp-table-drag-container .csp-move-column {
+    //可设置移动元素的位置的样式，js文件未添加这个class，会有问题，要加!important
+    //background: red !important;
+  }
+  //filter容器样式
+  .csp-table-filter-box {
+    border: 1px solid #d9d9d9;
+    margin-bottom: @table-margin-top-bottom;
+    border-radius: 4px;
+    padding: 8px 16px 0;
+    overflow: hidden;
+  }
+  .csp-table-filter-type {
+    line-height: 28px;
+    position: relative;
+  }
+  .csp-table-filter-title {
+    float: left;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .csp-table-filter-content {
+    padding-left: 120px;
+  }
+  .csp-table-filter-content > div ,.csp-table-filter-content > span ,.csp-table-filter-content > label ,.csp-table-filter-content > button {
+    margin-bottom: 8px;
+  }
+  .csp-table-filter-content > span {
+    display: inline-block;
+  }
+  .csp-table-filter-content > .ant-select {
+    width: 200px;
+  }
+  .csp-table-filter-content > .ant-select,.csp-table-filter-content > .ant-calendar-picker,.csp-table-filter-content > .csp-table-filter-range {
+    margin-right: 8px;
+  }
+  .csp-table-filter-box .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin-left:0;
+  }
+  .csp-table-filter-range > .ant-btn {
+    vertical-align: top;
+  }
+  .csp-table-filter-content > button {
+    vertical-align: top;
+  }
+  .csp-table-filter-range > .ant-btn:first-child {
+    border-top-right-radius:0 ;
+    border-bottom-right-radius:0 ;
+  }
+  .csp-table-filter-range > .ant-btn:last-child {
+    border-top-left-radius:0 ;
+    border-bottom-left-radius:0 ;
+  }
+  .csp-table-filter-range > .ant-btn:first-child[disabled]:active,
+  .csp-table-filter-range > .ant-btn:first-child[disabled]:focus ,
+  .csp-table-filter-range > .ant-btn:first-child[disabled]:hover{
+    color: inherit;
+  }
+  .csp-table-filter-range > .ant-btn:first-child.disabled,.csp-table-filter-range > .ant-btn:first-child[disabled] {
+    vertical-align: top;
+    cursor: default;
+    color: inherit;
+  }
+  .csp-table-filter-range > .ant-input {
+    width: 120px;
+    vertical-align: top;
+    border-radius: 0;
+    border-left: 0;
+  }
+  .csp-table-filter-range > .ant-input:nth-child(4) {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .csp-table-filter-range > .ant-input:nth-child(3) {
+    width: 24px;
+    cursor: default;
+  }
+  .csp-table-filter-empty-content {
+    text-align: center;
+    padding-bottom: 8px;
+  }
+
+}
